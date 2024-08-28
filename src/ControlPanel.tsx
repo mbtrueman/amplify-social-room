@@ -1,4 +1,3 @@
-
 import { RoomSelector } from "./RoomSelector";
 
 export function ControlPanel(props: {
@@ -11,10 +10,10 @@ export function ControlPanel(props: {
     <div className='control-panel-container'>
       <div className="control-panel">
         Room
-        {/* <RoomSelector
+        <RoomSelector
           currentRoomId={props.currentRoomId}
           onRoomChange={props.onRoomChange}
-        /> */}
+        />
         | Cursor: <button onClick={props.onUsernameChange}>{props.username} (click to change)</button>
       </div>
     </div>

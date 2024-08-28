@@ -17,33 +17,14 @@ export function CursorPanel({ myUsername, currentRoomId }: CursorPanelProps) {
 
 
   useEffect(() => {
-    console.log('client.subscriptions:', client);
-    // Add subscriptions here
-    // const sub = client.subscriptions.subscribeCursor({
-    //   roomId: currentRoomId,
-    //   myUsername: myUsername
-    // }).subscribe({
-    //   next: (event) => {
-    //     if (!event) { return }
-    //     if (event.username === myUsername) { return }
-
-    //     setCursors(cursors => {
-    //       return {
-    //         ...cursors,
-    //         [event.username]: event
-    //       }
-    //     })
-    //   }
-    // })
-
-    // return () => sub.unsubscribe()
+    // Add cursor subscriptions here
   }, [myUsername, currentRoomId])
 
   useEffect(() => { setCursors({}) }, [currentRoomId])
 
   useLayoutEffect(() => {
     const debouncedPublish = throttle(150, (username: string, x: number, y: number) => {
-      // client.mutations.publishCursor({ roomId: currentRoomId, username, x, y })
+      // Add cursor publishing here
     }, {
       noLeading: true
     })
