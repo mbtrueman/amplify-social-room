@@ -12,6 +12,8 @@ const schema = a.schema({
     topic: a.string(),
   }),
 
+  Cursor: a.customType(cursorType),
+
   publishCursor: a.mutation()
     .arguments(cursorType)
     .returns(a.ref('Cursor'))
@@ -26,9 +28,7 @@ const schema = a.schema({
     .authorization(allow => [allow.authenticated()])
     .handler(a.handler.custom({
       entry: './subscribeCursor.js'
-  })),
-
-  Cursor: a.customType(cursorType),
+    })),
 
 }).authorization((allow) => [allow.authenticated()]);
 
